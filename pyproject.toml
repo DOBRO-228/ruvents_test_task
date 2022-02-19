@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "xls_handler"
+version = "0.1.0"
+description = "xls_handler"
+authors = ["Dobro"]
+packages = [
+  { include = "xls_handler" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+wemake-python-styleguide = "^0.15.3"
+autopep8 = "^1.5.7"
+isort = "^5.9.3"
+requests-mock = "^1.9.3"
+pytest-cov = "^3.0.0"
+pytest = "^6.2.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+page-loader = "xls_handler.xls_handler:main"
