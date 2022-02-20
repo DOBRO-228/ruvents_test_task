@@ -12,10 +12,8 @@ package-reinstall:
 all: build publish package-reinstall
 
 lint:
-	poetry run flake8 page_loader
+	poetry run flake8 xls_handler
 test:
 	poetry run pytest -vv
-test-coverage:
-	poetry run pytest --cov=page_loader --cov-report xml
 sort:
 	poetry run isort .

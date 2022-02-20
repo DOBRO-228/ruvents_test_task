@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-""""""
+"""Xls handler."""
 
 import argparse
 import sys
@@ -15,6 +15,12 @@ from xls_handler.numbers_calculator import (
 
 
 def calculate(filepath=None):
+    """
+    Extract data from file, do some calculations and print results in console.
+
+    Args:
+        filepath(str): Filepath.
+    """
     excel_file = load_workbook(filepath)
     sheet = excel_file['Tasks']
     sys.stdout.write('There are {0} even numbers\n'.format(calculate_even_numbers(sheet, 'B')))
