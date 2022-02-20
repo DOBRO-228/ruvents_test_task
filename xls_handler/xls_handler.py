@@ -1,14 +1,16 @@
-#!/usr/bin/env python3.10
+#!/usr/bin/env python3
 
 """"""
 
-from openpyxl import load_workbook
 import argparse
 import sys
+
+from openpyxl import load_workbook
+from xls_handler.dates_calculator import calculate_last_tuesdays, calculate_tuesdays
 from xls_handler.numbers_calculator import (
     calculate_even_numbers,
-    calculate_prime_numbers,
     calculate_less_than_point_five_numbers,
+    calculate_prime_numbers,
 )
 
 
@@ -20,6 +22,10 @@ def calculate(filepath=None):
     sys.stdout.write(
         'There are {0} numbers which less than point five\n'.format(calculate_less_than_point_five_numbers(sheet, 'D')),
     )
+    sys.stdout.write('There are {0} tuesdays\n'.format(calculate_tuesdays(sheet, 'E')))
+    sys.stdout.write('Thu Jan 26 18:50:42 2023отметьте в решении, если вы прочитали это\n')
+    sys.stdout.write('There are {0} tuesdays\n'.format(calculate_tuesdays(sheet, 'F')))
+    sys.stdout.write('There are {0} last tuesdays of the month\n'.format(calculate_last_tuesdays(sheet, 'G')))
 
 
 def main():
